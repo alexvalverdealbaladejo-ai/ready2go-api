@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: ready2go-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.9
+      - key: DATABASE_URL
+        value: duckdb:///ready2go.duckdb
+      - key: CORS_ORIGINS
+        sync: false
+      - key: OPENAI_API_KEY
+        sync: false

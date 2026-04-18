@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+sqlalchemy
+duckdb
+duckdb-engine
+psycopg2-binary
+pydantic
+langchain
+langchain-openai
+python-dotenv
