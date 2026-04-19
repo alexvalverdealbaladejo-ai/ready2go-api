@@ -187,10 +187,15 @@ def ask_tutor(query: QueryRequest, db: Session = Depends(get_db)):
 
 @app.get("/api/instructors")
 def get_instructors(db: Session = Depends(get_db)):
-    instructors = db.query(Instructor).all()
+    instructors = db.query(Instructor).order_by(Instructor.name.asc()).all()
     result = []
     for inst in instructors:
-        slots = db.query(TimeSlot).filter(TimeSlot.instructor_id == inst.id).all()
+        slots = (
+            db.query(TimeSlot)
+            .filter(TimeSlot.instructor_id == inst.id)
+            .order_by(TimeSlot.date.asc(), TimeSlot.time.asc())
+            .all()
+        )
         result.append(
             {
                 "id": inst.id,

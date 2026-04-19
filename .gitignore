@@ -5,3 +5,4 @@ __pycache__/
 .env
 !.env.example
 ready2go.duckdb
+ready2go.duckdb.wal
