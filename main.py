@@ -262,6 +262,7 @@ def get_video_checkpoints(video_id: str, db: Session = Depends(get_db)):
         "video_id": video.id,
         "title": video.title,
         "video_url": metadata.get("video_url", ""),
+        "audio_url": metadata.get("audio_url", ""),
         "checkpoints": metadata.get("checkpoints", []),
     }
 

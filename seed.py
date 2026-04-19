@@ -14,6 +14,7 @@ DEFAULT_VIDEO_METADATA = {
         "03:45": "Obligacion de detenerse completamente en un Stop",
     },
     "video_url": "/videos/tema4_intersecciones_final.mp4",
+    "audio_url": "/audio/tema4_intersecciones_locucion.mp3",
     "checkpoints": [
         {
             "id": "cp_1",
